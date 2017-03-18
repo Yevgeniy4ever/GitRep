@@ -20,6 +20,6 @@ public interface Stack<E> {
 
     void pushAll(Collection<E> src) throws StackException;
 
-    void popAll(Collection<E> dst) throws StackException;
+    void popAll(Collection<? super E> dst) throws StackException;
 
 }
