@@ -22,19 +22,30 @@ public class BoundGenerics {
 
         List<Animal> animals = new ArrayList<>();
     }
-               //Коллекция потребляет данные\Consumer\Операция записи
+               //Коллекция потребляет данные\Consumer\Операция записи - можем сложить Т и все классы предки приведенные к обжект
         static void fillPets(List<? super Pet> pets){
             pets.add(new Dog());
             pets.add(new Cat());
         }
-                //КОЛЛЕКЦИЯ ПОСТАВЛЯЕТ ДАННЫЕ\PRODUCER\ОПЕРАЦИЯ ЧТЕНИЯ
+    //Коллекция потребляет данные\СConsumer\Операция записи
+/*   void do(List<? super Pet> src){
+        for (Object item : src){
+           ...
+        }
+     }*/
+                //КОЛЛЕКЦИЯ ПОСТАВЛЯЕТ ДАННЫЕ\PRODUCER\ОПЕРАЦИЯ ЧТЕНИЯ - читать и знаем какими классами он ограничен, можем исполнить все методы класса Пэт и наследниками приведенными к Т
         static <T extends Pet> void callPets(List<T> pets){
             for (T item : pets){
                 item.call();
             }
            // pets.stream().forEach(Pet::call);
         }
-
+//КОЛЛЕКЦИЯ ПОСТАВЛЯЕТ ДАННЫЕ\PRODUCER\ОПЕРАЦИЯ ЧТЕНИЯ
+/*   void do(List<? extends Pet> src){
+        for (Object item : src){
+          ...
+        }
+     }*/
 
 /*
           static void callPets(List<? extends Pet> list){
@@ -53,17 +64,16 @@ public class BoundGenerics {
 }
 
 // for example
-//Коллекция потребляет данные\СConsumer\Операция записи
-/*   void do(List<? super Pet> src){
-        for (Object item : src){
-           ...
-        }
-     }*/
+/*
 
-//КОЛЛЕКЦИЯ ПОСТАВЛЯЕТ ДАННЫЕ\PRODUCER\ОПЕРАЦИЯ ЧТЕНИЯ
-/*   void do(List<? extends Pet> src){
-        for (Object item : src){
-          ...
-        }
-     }*/
+PECS
 
+Producer Extends Consumer Super
+
+Producer
+Поставщик может работать с типом Т и его наследниками(приведенным к Т)
+
+Consumer
+Потребитель может принимать тип Т и его предков (приведенными к Object)
+
+*/
