@@ -32,7 +32,7 @@ public class BoundGenerics {
         for (Object item : src){
            ...
         }
-     }*/
+     } 1 */
                 //КОЛЛЕКЦИЯ ПОСТАВЛЯЕТ ДАННЫЕ\PRODUCER\ОПЕРАЦИЯ ЧТЕНИЯ - читать и знаем какими классами он ограничен, можем исполнить все методы класса Пэт и наследниками приведенными к Т
         static <T extends Pet> void callPets(List<T> pets){
             for (T item : pets){
