@@ -67,7 +67,8 @@ public class ArrayStack<E> implements Stack<E> {
         return false;
     }
     @Override
-    public void pushAll(Collection<E> src) throws StackException{
+
+    public void pushAll(Collection<? extends E> src) throws StackException {
 
     }
     @Override
