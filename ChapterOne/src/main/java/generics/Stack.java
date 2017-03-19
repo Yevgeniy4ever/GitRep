@@ -18,7 +18,7 @@ public interface Stack<E> {
 
     boolean isFull();
 
-    void pushAll(Collection<E> src) throws StackException;
+    void pushAll(Collection<? extends E> src) throws StackException;
 
     void popAll(Collection<? super E> dst) throws StackException;
 

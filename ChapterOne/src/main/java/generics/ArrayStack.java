@@ -13,26 +13,26 @@ public class ArrayStack<E> implements Stack<E> {
     private int capacity;
     private int size;
 
+    public ArrayStack(int capacity) {
+        this.capacity = capacity;
+        size = 0;
+        elements = new Object[capacity];
+    }
+
     public static void main(String[] args) throws StackException {
-        ArrayStack<Integer> ints = new ArrayStack<>(10);
+        ArrayStack<Number> ints = new ArrayStack<>(10);
         ints.push(10);
         ints.push(12);
 
 /*
         List<Number> nums = new ArrayList<>();
 */
-        List<Integer> nums = new java.util.Arrays.asList(1, 2, 3);
+        List<Integer> nums = java.util.Arrays.asList(1, 2, 3);
 
         //Stack -> Coll(int -> number)
 /*        ints.popAll(nums);*/
         //Coll -> Stack()
-        ints.push(nums);
-    }
-
-    public ArrayStack(int capacity) {
-        this.capacity = capacity;
-        size = 0;
-        elements = new Object[capacity];
+        ints.pushAll(nums);
     }
 
     @Override

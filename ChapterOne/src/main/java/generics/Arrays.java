@@ -9,10 +9,9 @@ import java.util.Objects;
  */
 public class Arrays {
 
-    public static void main(String[] args) {
         List<String> strs = new ArrayList<>();
-/*        List<Objects> objs = strs;*/
+/*      List<Objects> objs = strs;*/
 
         List lst = strs;
-    }
+
 }
