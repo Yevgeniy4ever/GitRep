@@ -12,8 +12,8 @@ public class CounterTest {
 
     public static void testCounter() {
         final int threadNum = 2;
-        Counter counter = new SimpleCounter();
-        //Counter counter = new AtomicCounter();
+        //Counter counter = new SimpleCounter();
+        Counter counter = new AtomicCounter();
         //LockCounter counter = new LockCounter();
         Thread[] threads = new Thread[threadNum];
         for (int i = 0; i < threadNum; i++) {
@@ -94,3 +94,26 @@ public class CounterTest {
         }
     }
 }
+
+
+/* (x86 - CMPXCHG)
+    bool CAS(int *pAddr, int expected, int new){
+        atomic{
+            if (*pAddr == expected){
+                *pAddr = new;
+                return true;
+            }
+            return false;
+        }
+    }
+
+
+    private Long currentValue;
+
+    public Long getAndIncrement(){
+    do {
+        Long val = currentValue;
+        } while (!CAS(currentValue, val, val + 1));
+        return val;
+    }
+ */
