@@ -48,3 +48,27 @@ public class MyThread extends Thread {
         t.start();
         //t.run();
     }*/
+
+
+   /* private volatine boolean pleaseStop;
+    @Override
+    void run(){
+        while(!pleaseStop){
+
+            }
+        }
+
+    MyThread t = new MyThread;
+    t.setStop(true);*/
+
+/*
+   @Override
+    void run(){
+       while(!Thread.currentThread().isInterrupted()){
+           //do what you want to do!
+       }
+   }
+
+   MyThread t = new MyThread;
+    //подаем сигнал, просим остановиться
+    t.interrupt();*/

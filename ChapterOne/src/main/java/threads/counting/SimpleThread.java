@@ -16,10 +16,11 @@ public class SimpleThread {
     static void inParallel() throws Exception {
         Thread t1 = new MyThread("inParallel");
         System.out.println("Starting thread");
-/*
             t1.start();
-*/
+        t1.join();
+/*
         t1.run();
+*/
         for (int i = 0; i < 5; i++) {
             System.out.println("Main: " + i);
             TimeUnit.SECONDS.sleep(2);

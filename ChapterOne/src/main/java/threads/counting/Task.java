@@ -7,6 +7,16 @@ import java.util.TimerTask;
  * Created by Yevgeniy on 19.03.2017.
  */
 public class Task implements Runnable {
+    private int num;
+
+    public Task() {
+
+    }
+
+    public Task(int num) {
+        this.num = num;
+    }
+
     public static void main(String[] args) {
         Thread t = new Thread(new Task());
         Thread t1 = new Thread(new Task());
