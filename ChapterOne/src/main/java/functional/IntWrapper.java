@@ -5,25 +5,33 @@ package functional;
  */
 public class IntWrapper {
 
-    String operation;
-    int num;
+    interface Monad<T> {
+        T apply(T t);
+    }
 
-    public IntWrapper setOperation(String operation) {
+    Monad<String> operation;
+    Monad<Integer> num;
+
+    public IntWrapper setOperation(Monad<String> operation) {
         this.operation = operation;
         return this;
     }
 
-    public IntWrapper setNum(int num) {
+    public IntWrapper setNum(Monad<Integer> num) {
         this.num = num;
         return this;
     }
 
-    public int calculate(int num2){
+    public int calculate(int num2) {
         int result = 0;
-        switch(operation){
+        operation.apply("asd");
+        num.apply(12);
+/*        switch(operation){
             case "+":result = num + num2; break;
             case "-":result = num - num2; break;
-        }
+        }*/
         return result;
     }
+
+
 }
