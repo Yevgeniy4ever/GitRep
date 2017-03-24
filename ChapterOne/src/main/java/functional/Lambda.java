@@ -9,13 +9,9 @@ public class Lambda {
 
 
 
-    @FunctionalInterface
-    interface Converter<F, T>{
-        T convert(F from);
-    }
-
     public static void main(String[] args) {
 
+        //Array creating
         List<Integer> list = new ArrayList<>();
         for(int i = 5; i < 50; i += 5) {
             list.add(i);
@@ -23,9 +19,10 @@ public class Lambda {
             list.add(i);
         }
 
-
+        //Create instance of class Something
         Something something = new Something();
 
+        //Look higher.. We use interface like type and use method from instance class.
         Converter<String, String> myConverter = something::startsWith;
         String myConverted = myConverter.convert("Java");
         System.out.println(myConverted);
@@ -33,11 +30,12 @@ public class Lambda {
 
         Converter<String, Integer> converter = (from) -> Integer.valueOf(from);
 
-        Converter<String, Integer> quest = Integer::valueOf;
-        Integer questConverdet = quest.convert("Opa gangam style");
+        Converter<String, String> quest = String::valueOf;
+        String questConverted = quest.convert("errerere");
 
         Integer converted = converter.convert("123");
 
+        System.out.println(questConverted);
         System.out.println(converted);
 
 
@@ -85,6 +83,11 @@ public class Lambda {
         k = ++ k + 5;
         System.out.println("5th: " + k);*/
 
+    }
+
+    @FunctionalInterface
+    interface Converter<F, T> {
+        T convert(F from);
     }
 
 
