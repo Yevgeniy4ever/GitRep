@@ -13,7 +13,7 @@ public class MyPredicate {
         Integer op = rop.num("opa");
         System.out.println(op);
 
-        Predicate<String> predicate = (s) -> s.length() > 0;
+        Predicate<String> predicate = (s) -> s.length() > 3;
         Boolean smt = predicate.equals("opa");
         System.out.println(smt);
 

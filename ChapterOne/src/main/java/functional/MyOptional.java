@@ -14,9 +14,12 @@ public class MyOptional {
     public static void main(String[] args) {
 
         String h = null;
-        Optional<String> optional = Optional.of("");
-/*        System.out.println(optional.isPresent());
-        System.out.println(optional.get());*/
+        Optional<String> optional = Optional.of("Hello");
+        System.out.println(optional.isPresent());
+        System.out.println(optional.get());
+        optional = null;
+        System.out.println(optional.isPresent());
+        optional.of("Bye");
         System.out.println(optional.orElse("Goodbay"));
 
 
